@@ -28,3 +28,6 @@ Spotify Items are specific resources from the Spotify API including: artists, al
 | __name__ | string | Name of the item |
 | __url__ | string | URL for opening this item in a browser-based Spotify player |
 | __image_url__ | string | URL of the photo to display for this item |
+
+#### Suggestion
+Suggestions are pairs of one Restaurant and one SpotifyItem. They are what this website is all about, suggestions on how to combine music and food. Because the pairings are random, we rely upon crowdsourced ratings from our users to determine if a particular pairing is good.
