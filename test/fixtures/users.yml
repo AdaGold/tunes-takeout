@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  oauth_provider: MyString
+  oauth_uid: MyString
+  spotify_data: MyString
+
+two:
+  oauth_provider: MyString
+  oauth_uid: MyString
+  spotify_data: MyString
