@@ -16,4 +16,9 @@ class ApplicationController < ActionController::Base
   def display_name
     current_user&.display_name || t(:guest_name)
   end
+
+  helper_method :signed_in?
+  def signed_in?
+    !current_user.nil?
+  end
 end

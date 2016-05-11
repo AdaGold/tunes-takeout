@@ -1,1 +1,7 @@
 <h1>Welcome, <%= display_name %>!</h1>
+
+<% if !signed_in? -%>
+  <%= link_to "Sign In", sign_in_users_path %>
+<% else -%>
+  <%= link_to "Sign Out", sign_out_users_path %>
+<% end -%>
