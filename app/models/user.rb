@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
     @spotify_user ||= RSpotify::User.new(JSON.parse(super))
   end
 
+  delegate :display_name, to: :spotify_data
+
   private
 
   def spotify_data=(hash)

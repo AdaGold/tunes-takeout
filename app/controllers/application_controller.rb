@@ -11,4 +11,9 @@ class ApplicationController < ActionController::Base
     session[:user_id] = user&.id
     @current_user = user
   end
+
+  helper_method :display_name
+  def display_name
+    current_user&.display_name || t(:guest_name)
+  end
 end
