@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :suggestions
   resources :spotify_items
   resources :restaurants
-  resources :sessions
+  resource :session, only: [:new, :destroy]
 end
