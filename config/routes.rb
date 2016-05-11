@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   resources :spotify_items
   resources :restaurants
   resource :session, only: [:new, :destroy]
+
+  # OAuth callbacks
+  get '/auth/spotify/callback', to: 'sessions#create', provider: 'spotify'
 end
