@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       get 'sign_out'
     end
   end
+  get 'login', to: 'users#sign_in', as: 'login'
+  get 'logout', to: 'users#sign_out', as: 'logout'
 
   resources :suggestions
   resources :spotify_items
