@@ -1,8 +1,10 @@
 <div class="suggestion">
   <div class="restaurant">
+    <%= image_tag s.restaurant.image_url, alt: s.restaurant.name, class: "photo" %>
     <h3><%= link_to s.restaurant.name, s.restaurant.url %></h3>
   </div>
   <div class="spotify-item">
+    <%= image_tag s.spotify_item.image_url, alt: s.spotify_item.name, class: "photo" %>
     <h3><%= link_to s.spotify_item.name, s.spotify_item.url %></h3>
   </div>
   <% if !s.persisted? -%>
