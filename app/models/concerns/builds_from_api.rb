@@ -3,10 +3,10 @@ module BuildsFromAPI
 
   class_methods do
 
-    def new_from_api(api_data)
+    def new_from_api_data(data)
       return self.new do |obj|
         self::API_ATTR_LIST.map(&:to_sym).each do |attr|
-          obj.send("#{attr}=".to_sym, api_attr_get(api_data, attr))
+          obj.send("#{attr}=".to_sym, api_attr_get(data, attr))
         end
       end
     end
