@@ -5,4 +5,11 @@
   <div class="spotify-item">
     <h3><%= link_to s.spotify_item.name, s.spotify_item.url %></h3>
   </div>
+  <% if !s.persisted? -%>
+    <%= form_tag suggestions_path, method: :post do %>
+      <%= hidden_field_tag 'business_id', s.restaurant.business_id %>
+      <%= hidden_field_tag 'item_id', s.spotify_item.item_id %>
+      <%= submit_tag "Save", class: "btn-save" %>
+    <% end -%>
+  <% end -%>
 </div>

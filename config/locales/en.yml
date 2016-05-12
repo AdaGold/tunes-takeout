@@ -1,2 +1,5 @@
 en:
   guest_name: "Guest"
+  suggestion:
+    save_error: "Could not save suggestion."
+    save_success: "Suggestion successfully saved!"

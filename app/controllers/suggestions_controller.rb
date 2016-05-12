@@ -18,4 +18,13 @@ class SuggestionsController < ApplicationController
       render file: 'public/404.html', status: :not_found
     end
   end
+
+  def create
+    suggestion = Suggestion.create_from_api_id(params[:business_id], params[:item_id])
+    if suggestion.nil?
+      redirect_to root_path, notice: t(:save_error, scope: [:suggestion])
+    else
+      redirect_to suggestion, notice: t(:save_success, scope: [:suggestion])
+    end
+  end
 end
