@@ -18,4 +18,8 @@ class SpotifyItem < ActiveRecord::Base
       end
     }
   }
+
+  def self.new_from_api_id(item_id)
+    self.new_from_api_data(DEFAULT_SPOTIFY_TYPE.find(item_id))
+  end
 end

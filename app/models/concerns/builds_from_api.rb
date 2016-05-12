@@ -24,6 +24,21 @@ module BuildsFromAPI
     end
 
 
+    # API id methods
+    def find_or_create_by_api_id(id)
+      existing = self.find_by(self::API_ATTR_ID => id)
+      return existing || self.create_from_id(id)
+    end
+
+    # def new_from_api_id(id)
+    # implemented by classes using this concern
+
+    def create_from_api_id(id)
+      obj = self.new_from_id(id)
+      return obj.save ? obj : nil
+    end
+
+
     # Utility methods
     def api_attr_map
       @attr_map ||= Hash.new { |hash, key| key }.merge(self::API_ATTR_MAP)
