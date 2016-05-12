@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+.suggestion {
+  margin: 2em auto;
+  border-radius: 1em 2em;
+  border-style: solid;
+  border-width: 2px;
+  width: 60%;
+
+  .restaurant, .spotify-item {
+    display: inline-block;
+    width: 45%;
+    text-align: center;
+  }
+
+  .restaurant {
+    margin-right: 0.5em;
+  }
+  .spotify-item {
+    margin-left: 0.5em;
+  }
+}

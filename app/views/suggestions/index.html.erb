@@ -5,3 +5,16 @@
 <% else -%>
   <%= link_to "Sign Out", sign_out_users_path %>
 <% end -%>
+
+<div class="suggestions">
+  <% @suggestions.each do |s| -%>
+    <div class="suggestion">
+      <div class="restaurant">
+        <h3><%= link_to s.restaurant.name, s.restaurant.url %></h3>
+      </div>
+      <div class="spotify-item">
+        <h3><%= link_to s.spotify_item.name, s.spotify_item.url %></h3>
+      </div>
+    </div>
+  <% end -%>
+</div>
