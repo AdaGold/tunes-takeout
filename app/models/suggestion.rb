@@ -29,4 +29,16 @@ class Suggestion < ActiveRecord::Base
     suggestion = self.new_from_api_id(business_id, item_id)
     return suggestion.save ? suggestion : nil
   end
+
+  # Find/Build methods
+  def self.find_random(query, limit)
+    restaurants = Restaurant.search(query, limit).shuffle
+    spotify_items = SpotifyItem.search(query, limit).shuffle
+    num_pairs = [restaurants.length, spotify_items.length].min
+
+    # We'll just do single pairs for now, rather than cartesian product
+    (0...num_pairs).map do |n|
+      self.new_from_api_data(restaurants[n], spotify_items[n])
+    end
+  end
 end

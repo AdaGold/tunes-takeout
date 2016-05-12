@@ -19,7 +19,14 @@ class SpotifyItem < ActiveRecord::Base
     }
   }
 
+  DEFAULT_SPOTIFY_TYPE = RSpotify::Track
+
   def self.new_from_api_id(item_id)
     self.new_from_api_data(DEFAULT_SPOTIFY_TYPE.find(item_id))
+  end
+
+  def self.search(query, limit)
+    items = DEFAULT_SPOTIFY_TYPE.search(query, limit: limit)
+    return items || []
   end
 end
