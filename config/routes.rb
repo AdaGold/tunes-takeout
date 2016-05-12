@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'login', to: 'users#sign_in', as: 'login'
   get 'logout', to: 'users#sign_out', as: 'logout'
 
-  resources :suggestions
+  resources :suggestions, only: [:show]
   resources :spotify_items
   resources :restaurants
   resource :session, only: [:new, :destroy]
