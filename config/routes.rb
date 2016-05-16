@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  get 'suggestions/index'
+
+  get 'suggestions/favorite'
+
+  get 'suggestions/favorites'
+
+  get 'suggestions/unfavorite'
+
+  resources :sessions, except: [:show]
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
