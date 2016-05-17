@@ -1,2 +1,2 @@
-class Food < ActiveRecord::Base
+class Food 
 end

@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'suggestions/index'
+  root 'suggestions#index'
 
-  get 'suggestions/favorite'
+  post '/suggestions/index' => "suggestions#show"
+  #
+  # get 'suggestions/favorites'
+  #
+  # get 'suggestions/unfavorite'
 
-  get 'suggestions/favorites'
-
-  get 'suggestions/unfavorite'
-
-  resources :sessions, except: [:show]
+  resources :sessions, :except => [:show]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

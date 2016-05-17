@@ -1,2 +1,7 @@
-<h1>Suggestions#index</h1>
-<p>Find me in app/views/suggestions/index.html.erb</p>
+<%=@suggestions.inspect%>
+<%= form_tag do %>
+  <%= label_tag :"Please your interest, eather food or artist" %>
+  <%= text_field_tag :user_input %>
+  <%= submit_tag %>
+<% end %>
+<h1>Your sugestions are:</h1>

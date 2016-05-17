@@ -36,6 +36,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
+    ansi (1.5.0)
     arel (6.0.3)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -50,6 +52,8 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     debug_inspector (0.0.2)
     docile (1.1.5)
     erubis (2.7.0)
@@ -60,6 +64,7 @@ GEM
       faraday (>= 0.7.4, < 0.10)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    hashdiff (0.3.0)
     hashie (3.4.4)
     httparty (0.13.7)
       json (~> 1.8)
@@ -83,7 +88,18 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0221)
     mini_portile2 (2.0.0)
+    minispec-metadata (2.0.0)
+      minitest
     minitest (5.8.4)
+    minitest-reporters (1.1.9)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
+    minitest-vcr (1.4.0)
+      minispec-metadata (~> 2.0)
+      minitest (>= 4.7.5)
+      vcr (>= 2.9)
     multi_json (1.12.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -102,7 +118,6 @@ GEM
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-    pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -144,6 +159,8 @@ GEM
     rspotify (1.10.0)
       omniauth-oauth2 (~> 1.1)
       rest_client (~> 1.8)
+    ruby-progressbar (1.8.1)
+    safe_yaml (1.0.4)
     sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -169,18 +186,26 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.3.11)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    turbolinks (2.5.3)
+      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
+    vcr (3.0.1)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    webmock (2.0.2)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
     yelp (2.1.2)
       faraday (~> 0.8, >= 0.8.0)
       faraday_middleware (~> 0.8, >= 0.8.0)
@@ -195,7 +220,8 @@ DEPENDENCIES
   httparty (= 0.13.7)
   jbuilder (~> 2.0)
   jquery-rails
-  pg (~> 0.15)
+  minitest-reporters
+  minitest-vcr
   pry-rails (= 0.3.4)
   rails (= 4.2.6)
   rspotify (= 1.10.0)
@@ -203,8 +229,11 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   simplecov (= 0.11.2)
   spring
+  sqlite3
+  turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  webmock
   yelp
 
 RUBY VERSION
