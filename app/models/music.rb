@@ -3,9 +3,8 @@ require 'rspotify'
 require "#{Rails.root}/lib/TunesTakeoutWrapper.rb"
 
 class Music
-  include TunesTakeoutWrapper
 
-@suggestions.each do |suggestion|
+@all_suggestions.suggestion.map do |suggestion|
   if suggestion["music_type"] == "artist"
     artist = RSpotify::Artist.find(suggestion["music_id"])
   elsif suggestion["music_type"] == "album"

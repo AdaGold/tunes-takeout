@@ -2,9 +2,10 @@ require "#{Rails.root}/lib/charles/TunesTakeoutWrapper.rb"
 
 class SuggestionsController < ApplicationController
   def index
-    # include tunes_takeout_wrapper
+  end
 
-    @suggestions = Charles::TunesTakeoutWrapper.find(params[:user_input])
+  def result
+    @all_suggestions = Charles::TunesTakeoutWrapper.find(params[:user_input])
   end
 
   def favorite

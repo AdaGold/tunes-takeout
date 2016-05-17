@@ -1,0 +1,10 @@
+
+<h1>Your sugestions are:</h1>
+
+  <%@all_suggestions.suggestions.map do |sugg_hash|%>
+  <%=sugg_hash["food_id"]%>
+  <%=sugg_hash["music_id"]%>
+  <%=sugg_hash["music_type"]%>
+
+  <br>
+  <%end%>

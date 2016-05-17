@@ -1,7 +1,5 @@
-<%=@suggestions.inspect%>
-<%= form_tag do %>
-  <%= label_tag :"Please your interest, eather food or artist" %>
+<%= form_tag result_path do %>
+  <%= label_tag :"Please enter your interest, either food or artist" %>
   <%= text_field_tag :user_input %>
   <%= submit_tag %>
 <% end %>
-<h1>Your sugestions are:</h1>
