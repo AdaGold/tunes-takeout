@@ -2,9 +2,24 @@
 <h1>Your sugestions are:</h1>
 
   <%@all_suggestions.suggestions.map do |sugg_hash|%>
+  <%=sugg_hash["id"]%>
+
   <%=sugg_hash["food_id"]%>
   <%=sugg_hash["music_id"]%>
+
   <%=sugg_hash["music_type"]%>
 
   <br>
+  <%end%>
+
+  <br><br>
+  <br><br>
+  <br><br>
+
+<br>
+<br><br>
+
+<%@music.map do |mus| %>
+<%=  mus.inspect %>
+<br><br>
   <%end%>

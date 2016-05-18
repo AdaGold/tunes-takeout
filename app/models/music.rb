@@ -1,21 +1,43 @@
-require 'rspotify'
-# require_relative '../lib/TunesTakeoutWrapper.rb'
-require "#{Rails.root}/lib/TunesTakeoutWrapper.rb"
 
 class Music
+  attr_reader :item_id, :type, :name, :url, :images
+  def initialize(data)
+    @item_id = data.id
+    @type	= data.type
+    @name	= data.name
+    @open_spotify_url = data.external_urls["spotify"]
+     if data.type == "track"
+       @images = data.album.images
+     else
+       @images = data.images
+     end
+  end
 
-@all_suggestions.suggestion.map do |suggestion|
-  if suggestion["music_type"] == "artist"
-    artist = RSpotify::Artist.find(suggestion["music_id"])
-  elsif suggestion["music_type"] == "album"
-    album = RSpotify::Album.find(suggestion["music_id"])
-  else
-    track = RSpotify::Track.find(suggestion["music_id"])
-end
-#built in methods
-# artist.related_artists #=> (Artist array)
-# album.album_type #=> "single"
-# track.album #=> (Album object)
+  def self.create(type, id)
+    if type == "artist"
+        music_result = RSpotify::Artist.find(id)
+      elsif type == "album"
+        music_result = RSpotify::Album.find(id)
+      elsif type == "playlist"
+        # music_result = RSpotify::Playlist.find(id)
+        music_result = RSpotify::Artist.find("1Xb0GGagoN5fWgMYOzlnzc")
+      else
+        music_result = RSpotify::Track.find(id)
+      end
+      return self.new(music_result)
 
+  end
+
+
+
+  # def self.get_music(music_id)
+  #   music_suggestion = RSpotify::Artist.find(music_id)
+  # end
+  #
+  # def get_type(type)
+  #
+  #
+  #
+  #   end
 
 end
