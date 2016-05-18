@@ -8,14 +8,16 @@ class SuggestionsController < ApplicationController
 
   def result
     @all_suggestions = Charles::TunesTakeoutWrapper.find(params[:user_input])
-    #an array id
     @music = @all_suggestions.suggestions.map do |sugg_hash|
       Music.create(sugg_hash["music_type"], sugg_hash["music_id"])
     end
 
-    # @food = @all_suggestions.suggestions.map do |sugg_hash|
-    #   Food.create(sugg_hash)
-    # end
+    @food = @all_suggestions.suggestions.map do |sugg_hash|
+      Food.find_in_api(sugg_hash["food_id"])
+    end
+
+    @zip = @music.zip @food
+
 
   end
 

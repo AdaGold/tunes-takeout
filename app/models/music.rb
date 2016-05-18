@@ -1,3 +1,4 @@
+require 'rspotify'
 
 class Music
   attr_reader :item_id, :type, :name, :url, :images
