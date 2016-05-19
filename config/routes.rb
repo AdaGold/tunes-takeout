@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   post '/suggestions' => 'suggestions#index'
 
-  # get 'suggestions/favorites'
+  get 'suggestions/favorites' => 'suggestions/favorites'
   #
   # get 'suggestions/unfavorite'
 

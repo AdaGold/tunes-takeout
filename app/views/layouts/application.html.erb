@@ -35,6 +35,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
      <ul class="nav navbar-nav">
        <li><%=link_to "Home", root_path%> </li>
+       <li><%=link_to "Top Favorites", suggestions_favorites_path %>
        <li><%=link_to "Login With Spotify", "/auth/spotify" unless current_user%>   </li>
        <li><%=link_to "Log Out", logout_path, method: :delete if current_user%> </li>
 

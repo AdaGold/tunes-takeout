@@ -1,7 +1,7 @@
 # require 'rspotify '
 
 class Music
-  attr_reader :item_id, :type, :name, :url, :image
+  attr_reader :item_id, :type, :name, :open_spotify_url, :image, :uri
   def initialize(data)
     @item_id = data.id
     @type	= data.type
@@ -14,6 +14,7 @@ class Music
      else
        @image = data.images[1]["url"]
      end
+    @uri = data.uri
   end
 
   def self.create(type, id)

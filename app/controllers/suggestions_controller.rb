@@ -7,9 +7,7 @@ class SuggestionsController < ApplicationController
     @all_suggestions = Charles::TunesTakeoutWrapper.find(params[:user_input])
 
     if @all_suggestions.suggestions.nil?
-
       flash.now[:notice] = "Something went wrong, please try again"
-
     else
 
       @music = @all_suggestions.suggestions.map do |sugg_hash|
@@ -17,8 +15,7 @@ class SuggestionsController < ApplicationController
       end
 
       @food = @all_suggestions.suggestions.map do |sugg_hash|
-        uri = Addressable::URI.parse(sugg_hash["food_id"])
-        Food.find_in_api(uri.normalize.to_s)
+        Food.find_in_api(sugg_hash["food_id"])
       end
 
       @zip = @music.zip @food
@@ -27,11 +24,12 @@ class SuggestionsController < ApplicationController
     render :index
   end
 
-  
   def favorite
+
   end
 
   def favorites
+    @top = Charles::TunesTakeoutWrapper.all_favorites
   end
 
   def unfavorite

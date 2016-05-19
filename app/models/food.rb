@@ -12,7 +12,8 @@ class Food
   end
 
   def self.find_in_api(id)
-  data = Yelp.client.business(id)
+  uri = Addressable::URI.parse(id)
+  data = Yelp.client.business(uri.normalize.to_s)
   return self.new(data)
   end
 end
