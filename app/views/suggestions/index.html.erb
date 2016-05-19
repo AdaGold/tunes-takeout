@@ -10,13 +10,14 @@
 <%= current_user.inspect %>
 <br><br><br><br>
 
+
+
 <% @zip.map do |pair|%>
-  <% pair.map do%>
     <div class="panel panel-primary">
       <table class="table">
         <tr>
           <td>
-          <strong>Name : </strong><%= pair[0].name %>
+          <h3><%= pair[0].name %></h3>
           <br>
           <strong>Type : </strong><%= pair[0].type %>
           <br>
@@ -26,7 +27,7 @@
           <td>
           <%= image_tag pair[1].the_image_url, alt: pair[1].the_image_url, class: "yelp_pic" %>
 
-          <strong>Name : </strong><%=  pair[1].name%>
+          <h3><%= pair[1].name %></h3>
           <br>
           <strong>Rating : </strong><%=  pair[1].rating%>
           <br>
@@ -50,7 +51,6 @@
       </table>
     </div>
 
-  <%end%>
 <%end%>
 
 <%end%>
