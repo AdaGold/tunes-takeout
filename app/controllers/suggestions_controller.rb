@@ -8,17 +8,25 @@ class SuggestionsController < ApplicationController
 
   def result
     @all_suggestions = Charles::TunesTakeoutWrapper.find(params[:user_input])
-    @music = @all_suggestions.suggestions.map do |sugg_hash|
-      Music.create(sugg_hash["music_type"], sugg_hash["music_id"])
+
+    if @all_suggestions.suggestions.nil?
+
+      flash.now[:notice] = "Something went wrong, please try again"
+      render :index
+
+    else
+
+      @music = @all_suggestions.suggestions.map do |sugg_hash|
+        Music.create(sugg_hash["music_type"], sugg_hash["music_id"])
+      end
+
+      @food = @all_suggestions.suggestions.map do |sugg_hash|
+        Food.find_in_api(sugg_hash["food_id"])
+      end
+
+      @zip = @music.zip @food
+
     end
-
-    @food = @all_suggestions.suggestions.map do |sugg_hash|
-      Food.find_in_api(sugg_hash["food_id"])
-    end
-
-    @zip = @music.zip @food
-
-
   end
 
   def favorite

@@ -1,26 +1,32 @@
 
 <h1>Your sugestions are:</h1>
 
-<br><br>
-<%  @food.map do |mus| %>
-<%=  mus.inspect %>
-<br><br>
-  <%end%>
-
-<br>
-<br><br>
-
-<%@music.map do |mus| %>
-<%=  mus.inspect %>
-<br><br>
-  <%end%>
-  <br><br>
-  <br><br>
 
 <%  @zip.map do |pair|%>
   <%    pair.map do%>
   <%= pair[0].name %>
    <br>
-  <%=  pair[1].name%>
+   <%= pair[0].item_id %>
+    <br>
+    <%= pair[0].type %>
+     <br>
+    <% photo_link = pair[0].images.map {|hash| hash["url"]}.last  %>
+     <%= image_tag photo_link, alt: photo_link %>
+
+      <br>
+  <%=  pair[1].name%>     <br>
+
+  <%=  pair[1].rating%>
+  <br>
+
+  <strong>total reviews<strong><%=  pair[1].review_count%>
+  <br>
+
+  <%=  pair[1].location%>
+  <br>
+  <%= image_tag pair[1].rating_img_url_small, alt: pair[1].rating_img_url_small %>
+
+  <%=  pair[1].categories%>
+
   <%end%>
   <%end%>
