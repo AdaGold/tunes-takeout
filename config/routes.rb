@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   #
   # get 'suggestions/unfavorite'
 
-  resources :sessions, :except => [:show]
+  resources :sessions, :only => [:create]
+
+  delete "/logout" => "sessions#destroy"
+
+  # get    "/login"  => "sessions#new"
+  get "/auth/:provider/callback" => "sessions#create"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
