@@ -1,4 +1,4 @@
-require 'rspotify'
+# require 'rspotify '
 
 class Music
   attr_reader :item_id, :type, :name, :url, :images
@@ -24,21 +24,9 @@ class Music
         music_result = RSpotify::Artist.find("1Xb0GGagoN5fWgMYOzlnzc")
       else
         music_result = RSpotify::Track.find(id)
+
       end
-      return self.new(music_result)
-
+    return self.new(music_result)
   end
-
-
-
-  # def self.get_music(music_id)
-  #   music_suggestion = RSpotify::Artist.find(music_id)
-  # end
-  #
-  # def get_type(type)
-  #
-  #
-  #
-  #   end
 
 end
