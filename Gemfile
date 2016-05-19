@@ -30,7 +30,7 @@ gem 'rspotify', '1.10.0'
 gem 'omniauth'
 #gem 'omniauth-github'
 gem 'omniauth-oauth2', '~> 1.3.1'
-
+gem 'addressable'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

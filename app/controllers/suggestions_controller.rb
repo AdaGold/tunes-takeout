@@ -4,15 +4,11 @@ require 'rspotify'
 
 class SuggestionsController < ApplicationController
   def index
-  end
-
-  def result
     @all_suggestions = Charles::TunesTakeoutWrapper.find(params[:user_input])
 
     if @all_suggestions.suggestions.nil?
 
       flash.now[:notice] = "Something went wrong, please try again"
-      render :index
 
     else
 
@@ -21,14 +17,17 @@ class SuggestionsController < ApplicationController
       end
 
       @food = @all_suggestions.suggestions.map do |sugg_hash|
-        Food.find_in_api(sugg_hash["food_id"])
+        uri = Addressable::URI.parse(sugg_hash["food_id"])
+        Food.find_in_api(uri.normalize.to_s)
       end
 
       @zip = @music.zip @food
 
     end
+    render :index
   end
 
+  
   def favorite
   end
 

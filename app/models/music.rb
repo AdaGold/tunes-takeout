@@ -1,16 +1,18 @@
 # require 'rspotify '
 
 class Music
-  attr_reader :item_id, :type, :name, :url, :images
+  attr_reader :item_id, :type, :name, :url, :image
   def initialize(data)
     @item_id = data.id
     @type	= data.type
     @name	= data.name
     @open_spotify_url = data.external_urls["spotify"]
      if data.type == "track"
-       @images = data.album.images
+       @image = data.album.images[1]["url"]
+     elsif data.type == "artist"
+       @image = data.albums[0].images[1]["url"]
      else
-       @images = data.images
+       @image = data.images[1]["url"]
      end
   end
 
@@ -20,7 +22,6 @@ class Music
       elsif type == "album"
         music_result = RSpotify::Album.find(id)
       elsif type == "playlist"
-        # music_result = RSpotify::Playlist.find(id)
         music_result = RSpotify::Artist.find("1Xb0GGagoN5fWgMYOzlnzc")
       else
         music_result = RSpotify::Track.find(id)

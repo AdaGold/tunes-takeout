@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # post '/suggestions' => 'suggestions#favorite', as: :favorite
 
-  post '/suggestions' => 'suggestions#result', as: :result
+  post '/suggestions' => 'suggestions#index'
 
   # get 'suggestions/favorites'
   #

@@ -222,6 +222,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable
   better_errors
   byebug (= 8.2.5)
   coffee-rails (~> 4.1.0)
