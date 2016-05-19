@@ -1,6 +1,4 @@
 
-# require 'yelp'
-
 class Food
   attr_reader :rating, :name, :review_count, :rating_img_url_small, :categories, :location
   def initialize(data)
