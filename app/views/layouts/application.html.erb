@@ -37,7 +37,16 @@
        <li><%=link_to "Home", root_path%> </li>
        <li><%=link_to "Top Favorites", suggestions_favorites_path %>
        <li><%=link_to "Login With Spotify", "/auth/spotify" unless current_user%>   </li>
-       <li><%=link_to "Log Out", logout_path, method: :delete if current_user%> </li>
+       <%if current_user%>
+
+       <li><%=link_to "Log Out", logout_path, method: :delete, class: "totheleft" %> </li>
+       <li><%=current_user.uid%></li>
+        <%if current_user.images == nil%>
+        <%=image_tag "http://i1.wp.com/www.techrepublic.com/bundles/techrepubliccore/images/icons/standard/icon-user-default.png", size: "50x50", class: "picprofile"%>
+        <%else%>
+        <%=image_tag current_user.images%>
+        <%end%>
+     <%end%>
 
    </ul>
 </div>
