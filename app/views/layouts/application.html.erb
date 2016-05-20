@@ -34,10 +34,10 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
          <li><%=link_to "Home", root_path%> </li>
-         <li><%=link_to "Top Favorites", root_path %>
+         <li><%=link_to "20 Top in the World", root_path %>
          <li><%=link_to "Login With Spotify", "/auth/spotify" unless current_user%>   </li>
          <%if current_user%>
-
+         <li><%=link_to "My Favorites", my_favorites_path %>
          <li><%=link_to "Log Out", logout_path, method: :delete, class: "totheleft" %> </li>
          <li><%=current_user.uid%></li>
          <%=image_tag current_user.images, class: "picprofile" %>

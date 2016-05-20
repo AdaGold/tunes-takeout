@@ -22,12 +22,13 @@ class SuggestionsController < ApplicationController
       @charles_ids =  @top.suggestions.map { |sugg_hash| sugg_hash["suggestion"]["id"]}
 
       @zip = @music.zip(@food, @charles_ids)
+    end
   end
 
 
   def favorites
 
-    end
+    @my_favorites = Charles::TunesTakeoutWrapper.get_my_favorite
 
   end
 

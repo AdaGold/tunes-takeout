@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   root 'suggestions#index'
 
-  # post '/suggestions' => 'suggestions#favorite', as: :favorite
+  get '/' => 'suggestions#index'
 
   post '/search_result' => 'suggestions#search_result'
 
-  get '/' => 'suggestions#index'
-
   post '/suggestions/favorite' => 'suggestions#favorite', as: :add_favorite
+  get '/suggestions/myfavs' => 'suggestions#my_favorites', as: :my_favorites
 
   #
   # get 'suggestions/unfavorite'
