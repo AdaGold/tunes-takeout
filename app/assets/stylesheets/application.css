@@ -13,12 +13,23 @@
  *= require_tree .
  *= require_self
  */
+/*
+ html {
+   background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-5-full.jpg);
+ }*/
+
 .yelp_pic {
   float: right;
   margin-top: 6%;
   margin-right: 15%;
 }
 
-/*.container {
-  width: 80%;
-}*/
+.picprofile {
+  float: right;
+  border: solid red;
+  text-align: right;
+}
+
+.totheleft {
+  float: right;
+}

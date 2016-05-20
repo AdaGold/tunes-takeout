@@ -6,16 +6,12 @@ module Charles
     attr_reader :suggestions
     def initialize(data)
       @suggestions = data
-
       #@food_id = data["suggestions"]["food_id"]
       # @music_id = data["suggestions"]["music_id"]
       # @music_type = data["suggestions"]["music_type"]
-
-
     end
 
     def self.find(user_input)
-      #find the suggestions base on the user_input
       data = HTTParty.get(BASE_URL + "/v1/suggestions/search?query=#{user_input}/").parsed_response
       return self.new(data["suggestions"])
     end
@@ -28,6 +24,9 @@ module Charles
       return self.new(total)
     end
 
+    def self.add_favorite(suggestion_id)
+      @result = HTTParty.post(BASE_URL + "/v1/users/#{current_user.uid}/favorites", body: { "suggestion": suggestion_id})
+    end
 
   end
 end

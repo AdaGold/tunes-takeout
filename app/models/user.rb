@@ -11,7 +11,9 @@ class User < ActiveRecord::Base
       user = User.new
       user.uid = auth_hash["info"]["id"]
       user.provider = auth_hash["provider"]
-      user.images = auth_hash["info"]["images"].first
+      user.name = auth_hash["info"]["display_name"]
+      user.images = auth_hash["info"]["images"][0]["url"]
+
       if user.save
         return user
       else

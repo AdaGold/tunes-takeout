@@ -1,10 +1,4 @@
-
-
 <% if @zip != nil%>
-<br><br><br><br>
-<%= current_user.inspect %>
-
-<br><br><br><br>
 <% @zip.map do |pair|%>
     <div class="panel panel-primary">
       <table class="table">
@@ -16,14 +10,18 @@
           <br>
           <%= image_tag pair[0].image, alt: pair[0].image %>
           </td>
+
+
           <td>
           <%= button_to "Favorite!", suggestions_favorite_path, method: :post, class: "btn btn-primary" %>
           <iframe src="https://embed.spotify.com/?uri=<%= pair[0].uri %>" frameborder="0" allowtransparency="true"></iframe>
+          <h3>Charles ID: <%= pair[2] %></h3>
+
           </td>
+
+
           <td>
           <%= image_tag pair[1].the_image_url, alt: pair[1].the_image_url, class: "yelp_pic" %>
-
-
           <h3><%= pair[1].name %></h3>
           <br>
           <strong>Rating : </strong><%=  pair[1].rating%>
@@ -49,5 +47,4 @@
     </div>
 
 <%end%>
-
 <%end%>

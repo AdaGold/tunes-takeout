@@ -18,16 +18,13 @@ class SuggestionsController < ApplicationController
         Food.find_in_api(sugg_hash["food_id"])
       end
 
-      @zip = @music.zip @food
-
+      @charles_ids =  @all_suggestions.suggestions.map { |sugg_hash| sugg_hash["id"]}
+      @zip = @music.zip(@food, @charles_ids)
     end
     render :index
   end
 
-  def favorite
 
-    Charles::TunesTakeoutWrapper.add_favorite(params["suggestion_id"])
-  end
 
   def favorites
     @top = Charles::TunesTakeoutWrapper.all_favorites
@@ -44,10 +41,16 @@ class SuggestionsController < ApplicationController
         Food.find_in_api(sugg_hash["food_id"])
       end
 
-      @zip = @music.zip @food
+      @charles_ids =  @top.suggestions.map { |sugg_hash| sugg_hash["suggestion"]["id"]}
+
+      @zip = @music.zip(@food, @charles_ids)
     end
   end
 
+  def favorite
+    Charles::TunesTakeoutWrapper.add_favorite(params["suggestion_id"])
+  end
+  
   def unfavorite
   end
 end
