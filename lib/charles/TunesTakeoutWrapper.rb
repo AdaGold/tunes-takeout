@@ -25,7 +25,8 @@ module Charles
     end
 
     def self.add_favorite(current_user_id,suggestion_id)
-      @result = HTTParty.post(BASE_URL + "/v1/users/#{current_user_id}/favorites", body: { "suggestion": suggestion_id})
+      HTTParty.post(BASE_URL + "/v1/users/#{current_user_id}/favorites", body: { "suggestion": suggestion_id}.to_json, headers: { 'Content-Type' => 'application/json' })
+
     end
 
   end

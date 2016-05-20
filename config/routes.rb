@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   post '/suggestions' => 'suggestions#index'
 
-  get 'suggestions/favorites' => 'suggestions#favorites'
+  get '/suggestions/favorites' => 'suggestions#favorites'
 
-  post 'suggestions/favorite' => 'suggestions#favorite', as: :add_favorite
+  post '/suggestions/favorite' => 'suggestions#favorite', as: :add_favorite
 
   #
   # get 'suggestions/unfavorite'

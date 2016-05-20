@@ -45,10 +45,11 @@ class SuggestionsController < ApplicationController
 
       @zip = @music.zip(@food, @charles_ids)
     end
+
   end
 
   def favorite
-    Charles::TunesTakeoutWrapper.add_favorite(params[:current_user_id], params[:suggestion_id])
+    @result = Charles::TunesTakeoutWrapper.add_favorite(params[:current_user_id], params[:suggestion_id])
     redirect_to root_path
   end
 
