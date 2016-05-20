@@ -31,22 +31,21 @@
         <a class="navbar-brand" href="#">Brand</a>
       </div>
 
-      <%=params%>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-     <ul class="nav navbar-nav">
-       <li><%=link_to "Home", root_path%> </li>
-       <li><%=link_to "Top Favorites", suggestions_favorites_path %>
-       <li><%=link_to "Login With Spotify", "/auth/spotify" unless current_user%>   </li>
-       <%if current_user%>
+        <ul class="nav navbar-nav">
+         <li><%=link_to "Home", root_path%> </li>
+         <li><%=link_to "Top Favorites", root_path %>
+         <li><%=link_to "Login With Spotify", "/auth/spotify" unless current_user%>   </li>
+         <%if current_user%>
 
-       <li><%=link_to "Log Out", logout_path, method: :delete, class: "totheleft" %> </li>
-       <li><%=current_user.uid%></li>
-        <%=image_tag current_user.images, class: "picprofile" %>
-        <%end%>
+         <li><%=link_to "Log Out", logout_path, method: :delete, class: "totheleft" %> </li>
+         <li><%=current_user.uid%></li>
+         <%=image_tag current_user.images, class: "picprofile" %>
+         <%end%>
 
 
-   </ul>
-</div>
+        </ul>
+      </div>
     </div><!-- /.container-fluid -->
 </nav>
 

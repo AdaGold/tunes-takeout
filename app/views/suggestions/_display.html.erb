@@ -1,9 +1,8 @@
-<% if @zip != nil%>
+<% if @zip %>
 <% @zip.map do |pair|%>
-    <div class="panel panel-primary">
       <table class="table">
         <tr>
-          <td>
+          <td class="foodmusic">
           <%= image_tag pair[0].image, size: '100X100', alt: "Profile Photo", class: "spotifypic" %>
           <h3 class="spotifytitle"><%= pair[0].name %></h3>
           <br>
@@ -14,17 +13,16 @@
           </td>
 
 
-          <td>
+          <td class="fava">
           <%= form_tag add_favorite_path, method: :post do %>
           <%=hidden_field_tag :current_user_id, current_user.uid%>
           <%=hidden_field_tag :suggestion_id, pair[2]%>
           <%=submit_tag 'Favorite!', class: "btn btn-primary"%>
           <%end%>
-          <h3>Charles ID: <br> <%= pair[2] %></h3>
           </td>
 
 
-          <td>
+          <td class="foodmusic">
             <div class="yelpheader">
               <%= image_tag pair[1].the_image_url, alt: pair[1].the_image_url, class: "yelp_pic" %>
               <h3><%= pair[1].name %></h3>
@@ -51,7 +49,6 @@
 
         </tr>
       </table>
-    </div>
 
 <%end%>
 <%end%>
