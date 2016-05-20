@@ -10,13 +10,16 @@
           <strong>Type : </strong><%= pair[0].type %>
           <br>
           <br>
-          <iframe src="https://embed.spotify.com/?uri=<%= pair[0].uri %>" frameborder="0" allowtransparency="true"></iframe>
+          <iframe src="https://embed.spotify.com/?uri=<%= pair[0].uri %>&theme=white" frameborder="0" allowtransparency="true"></iframe>
           </td>
 
 
-
           <td>
-          <%= button_to "Favorite!", { :controller => "suggestions", :action => "favorite", suggestion_id: pair[2], current_user_id: current_user.uid, class: "btn btn-primary" }, method: :post %>
+          <%= form_tag add_favorite_path, method: :post do %>
+          <%=hidden_field_tag :current_user_id, current_user.uid%>
+          <%=hidden_field_tag :suggestion_id, pair[2]%>
+          <%=submit_tag 'Favorite!', class: "btn btn-primary"%>
+          <%end%>
           <h3>Charles ID: <br> <%= pair[2] %></h3>
           </td>
 
@@ -30,9 +33,9 @@
           <div class="yelprates">
             <strong>Rating : </strong><%=  pair[1].rating%>
             <%= image_tag pair[1].rating_img_url_large, alt: pair[1].rating_img_url_large, class: "ratingpic" %>
+            <br>
+            <strong>Total Reviews: </strong><%=  pair[1].review_count%>
           </div>
-          <br>
-          <strong>Total Reviews: </strong><%=  pair[1].review_count%>
           <br>
           <strong>Location: </strong><%  pair[1].location.map do |loc| %>
             <%= loc  %>

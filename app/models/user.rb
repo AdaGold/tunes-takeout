@@ -12,8 +12,11 @@ class User < ActiveRecord::Base
       user.uid = auth_hash["info"]["id"]
       user.provider = auth_hash["provider"]
       user.name = auth_hash["info"]["display_name"]
+      if auth_hash["info"]["images"] == []
+      user.images = "http://i1.wp.com/www.techrepublic.com/bundles/techrepubliccore/images/icons/standard/icon-user-default.png"
+      else
       user.images = auth_hash["info"]["images"][0]["url"]
-
+    end
       if user.save
         return user
       else

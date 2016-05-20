@@ -26,6 +26,8 @@
 
 .picprofile {
   border-radius: 50%;
+  height: 50px;
+  width: 50px;
 }
 
 .totheleft {
@@ -34,10 +36,9 @@
 
 .spotifypic {
   height: 100px;
-  width: 100;
+  width: 100px;
   margin-top: 6%;
   margin-left: 5%;
-  border: solid red;
 }
 
 td {

@@ -47,9 +47,11 @@ class SuggestionsController < ApplicationController
     end
   end
 
-  def favorite(current_user_id, suggestion_id)
-    Charles::TunesTakeoutWrapper.add_favorite(params["current_user_id"], params["suggestion_id"])
+  def favorite
+    Charles::TunesTakeoutWrapper.add_favorite(params[:current_user_id], params[:suggestion_id])
+    redirect_to root_path
   end
+
 
   def unfavorite
   end

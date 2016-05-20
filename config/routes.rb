@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'suggestions/favorites' => 'suggestions#favorites'
 
-  post 'suggestions/favorite/:suggestion_id' => 'suggestions#favorite'
+  post 'suggestions/favorite' => 'suggestions#favorite', as: :add_favorite
 
   #
   # get 'suggestions/unfavorite'
