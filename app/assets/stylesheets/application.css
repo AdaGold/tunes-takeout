@@ -21,15 +21,47 @@
 .yelp_pic {
   float: right;
   margin-top: 6%;
-  margin-right: 15%;
+  margin-right: 12%;
 }
 
 .picprofile {
-  float: right;
-  border: solid red;
-  text-align: right;
+  border-radius: 50%;
 }
 
 .totheleft {
   float: right;
+}
+
+.spotifypic {
+  height: 100px;
+  width: 100;
+  margin-top: 6%;
+  margin-left: 5%;
+  border: solid red;
+}
+
+td {
+  width: 33%;
+}
+
+.spotifytitle {
+  border: solid yellow;
+  float: right;
+  width: 54%;
+}
+
+.ratingpic {
+  float: right;
+}
+
+.yelpheader {
+  border: solid blue;
+  overflow: auto;
+
+
+}
+
+.yelprates {
+  border: solid orange;
+  overflow: auto;
 }

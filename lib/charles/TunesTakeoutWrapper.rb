@@ -24,8 +24,9 @@ module Charles
       return self.new(total)
     end
 
-    def self.add_favorite(suggestion_id)
-      @result = HTTParty.post(BASE_URL + "/v1/users/#{current_user.uid}/favorites", body: { "suggestion": suggestion_id})
+    def self.add_favorite(current_user_id,suggestion_id)
+      raise
+      @result = HTTParty.post(BASE_URL + "/v1/users/#{current_user_id}/favorites", body: { "suggestion": suggestion_id})
     end
 
   end
