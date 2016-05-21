@@ -13,7 +13,8 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
+<%= favicon_link_tag 'favicon.ico' %>
+<link rel="icon" type="image/gif" href="assets/images/animated_favicon1.gif">
 </head>
 <body>
 
@@ -28,12 +29,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Brand</a>
+        <%=link_to "Melissa", root_path, class: 'navbar-brand'%>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-         <li><%=link_to "Home", root_path%> </li>
          <li><%=link_to "20 Top in the World", root_path %>
            <%if current_user%>
          <li><%= form_tag search_result_path, class: "navbar-form navbar-left" do  %>
