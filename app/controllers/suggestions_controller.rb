@@ -27,9 +27,23 @@ class SuggestionsController < ApplicationController
 
 
   def favorites
+    @my_favorites = Charles::TunesTakeoutWrapper.get_my_favorite(current_user.uid)
 
-    @my_favorites = Charles::TunesTakeoutWrapper.get_my_favorite
+    if @my_favorites.suggestions.nil?
+      flash.now[:notice] = "Something went wrong, please try again"
+    else
 
+      @music = @my_favorites.suggestions.map do |sugg_hash|
+        Music.create(sugg_hash['suggestion']["music_type"], sugg_hash['suggestion']["music_id"])
+      end
+
+      @food = @my_favorites.suggestions.map do |sugg_hash|
+        Food.find_in_api(sugg_hash['suggestion']["food_id"])
+      end
+
+      @charles_ids =  @my_favorites.suggestions.map { |sugg_hash| sugg_hash['suggestion']["id"]}
+      @zip = @music.zip(@food, @charles_ids)
+    end
   end
 
   def favorite

@@ -28,9 +28,8 @@ module Charles
 
     end
 
-    def get_my_favorite(current_user_id)
+    def self.get_my_favorite(current_user_id)
       data = HTTParty.get(BASE_URL + "/v1/users/#{current_user_id}/favorites").parsed_response
-
       total = data["suggestions"].map do |one_fav_id|
       HTTParty.get(BASE_URL + "/v1/suggestions/#{one_fav_id}").parsed_response
       end

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/search_result' => 'suggestions#search_result'
 
   post '/suggestions/favorite' => 'suggestions#favorite', as: :add_favorite
-  get '/suggestions/myfavs' => 'suggestions#my_favorites', as: :my_favorites
+  get '/suggestions/myfavs' => 'suggestions#favorites', as: :my_favorites
 
   #
   # get 'suggestions/unfavorite'
@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   resources :sessions, :only => [:create]
 
   delete "/logout" => "sessions#destroy"
-
   # get    "/login"  => "sessions#new"
   get "/auth/:provider/callback" => "sessions#create"
 
