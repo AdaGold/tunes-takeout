@@ -1,7 +1,7 @@
 require "#{Rails.root}/lib/charles/TunesTakeoutWrapper.rb"
 
 class SuggestionsController < ApplicationController
-before_action :require_login, only: [:favorites, :favorite, :unfavorites]
+before_action :require_login, only: [:favorites, :favorite, :unfavorites, :search_result]
   def index
     @top = Charles::TunesTakeoutWrapper.all_favorites
 
