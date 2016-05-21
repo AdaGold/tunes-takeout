@@ -1,50 +1,36 @@
 require "#{Rails.root}/lib/charles/TunesTakeoutWrapper.rb"
-require "#{Rails.root}/app/models/music.rb"
-require 'rspotify'
 
 class SuggestionsController < ApplicationController
 before_action :require_login, only: [:favorites, :favorite, :unfavorites]
   def index
-
     @top = Charles::TunesTakeoutWrapper.all_favorites
 
     if @top.nil?
       flash.now[:notice] = "Something went wrong, please try again"
     else
-
-      @music = @top.suggestions.map do |sugg_hash|
-        Music.create(sugg_hash["suggestion"]["music_type"], sugg_hash["suggestion"]["music_id"])
+      @zip = @top.suggestions.map do |sugg_hash|
+        [
+        Music.create(sugg_hash["suggestion"]["music_type"], sugg_hash["suggestion"]["music_id"]),
+        Food.find_in_api(sugg_hash["suggestion"]["food_id"]),
+        sugg_hash["suggestion"]["id"]
+        ]
       end
-
-      @food = @top.suggestions.map do |sugg_hash|
-        Food.find_in_api(sugg_hash["suggestion"]["food_id"])
-      end
-
-      @charles_ids =  @top.suggestions.map { |sugg_hash| sugg_hash["suggestion"]["id"]}
-
-      @zip = @music.zip(@food, @charles_ids)
     end
   end
 
-
   def favorites
-
     @my_favorites = Charles::TunesTakeoutWrapper.get_my_favorite(current_user.uid)
 
     if @my_favorites.suggestions.nil?
       flash.now[:notice] = "Something went wrong, please try again"
     else
-
-      @music = @my_favorites.suggestions.map do |sugg_hash|
-        Music.create(sugg_hash['suggestion']["music_type"], sugg_hash['suggestion']["music_id"])
+      @zip = @my_favorites.suggestions.map do |sugg_hash|
+        [
+        Music.create(sugg_hash['suggestion']["music_type"], sugg_hash['suggestion']["music_id"]),
+        Food.find_in_api(sugg_hash['suggestion']["food_id"]),
+        sugg_hash['suggestion']["id"]
+        ]
       end
-
-      @food = @my_favorites.suggestions.map do |sugg_hash|
-        Food.find_in_api(sugg_hash['suggestion']["food_id"])
-      end
-
-      @charles_ids =  @my_favorites.suggestions.map { |sugg_hash| sugg_hash['suggestion']["id"]}
-      @zip = @music.zip(@food, @charles_ids)
     end
   end
 
@@ -62,18 +48,13 @@ before_action :require_login, only: [:favorites, :favorite, :unfavorites]
     if @all_suggestions.suggestions.nil?
       flash.now[:notice] = "Something went wrong, please try again"
     else
-
-      @music = @all_suggestions.suggestions.map do |sugg_hash|
-        Music.create(sugg_hash["music_type"], sugg_hash["music_id"])
+      @zip = @all_suggestions.suggestions.map do |sugg_hash|
+        [
+        Music.create(sugg_hash["music_type"], sugg_hash["music_id"]),
+        Food.find_in_api(sugg_hash["food_id"]),
+        sugg_hash["id"]
+        ]
       end
-
-      @food = @all_suggestions.suggestions.map do |sugg_hash|
-        Food.find_in_api(sugg_hash["food_id"])
-      end
-
-      @charles_ids =  @all_suggestions.suggestions.map { |sugg_hash| sugg_hash["id"]}
-      @zip = @music.zip(@food, @charles_ids)
     end
-
   end
 end
