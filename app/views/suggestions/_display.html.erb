@@ -2,15 +2,19 @@
 <% @zip.map do |pair|%>
       <table class="table">
         <tr>
-          <td class="foodmusic">
+          <td class="music">
           <%= link_to pair[0].open_spotify_url, target: :_blank do %>
           <%= image_tag pair[0].image, size: '100X100', alt: "Profile Photo", class: "spotifypic" %>
-          <h3 class="spotifytitle"><%= pair[0].name %></h3>
+          <div class='spotifytitle'>
+
+          <h3><%= pair[0].name %></h3>
+          <strong>Type : </strong><%= pair[0].type.capitalize %>
           <% end %>
+          </div>
+          <br>
 
           <br>
-          <strong>Type : </strong><%= pair[0].type %>
-          <br>
+
           <br>
           <iframe src="https://embed.spotify.com/?uri=<%= pair[0].uri %>&theme=white" frameborder="0" allowtransparency="true"></iframe>
           </td>
@@ -26,12 +30,25 @@
           <%end%>
 
 
-          <td class="foodmusic">
+          <td class="food">
             <div class="yelpheader">
               <%= link_to pair[1].open_yelp_url, target: :_blank do %>
               <%= image_tag pair[1].the_image_url, alt: pair[1].the_image_url, class: "yelp_pic" %>
-              <h3><%= pair[1].name %></h3>
+              <h3 class="yelpheaderti"><%= pair[1].name %></h3>
               <% end %>
+              <% unless  pair[1].display_phone.nil? %>
+              <%= link_to "tel:#{pair[1].display_phone}" do%>
+              <span class="glyphicon glyphicon-phone-alt">&nbsp;</span>  <%= pair[1].display_phone[3..-1]  %>
+              <% end %>
+
+              <% end %>
+              <br>
+              <br>
+
+              <%  pair[1].location.map do |loc| %>
+                <%= loc %>
+                <br>
+              <%end %>
             </div>
           <br>
           <div class="yelprates">
@@ -40,16 +57,10 @@
             <br>
             <strong>Total Reviews: </strong><%=  pair[1].review_count%>
           </div>
-          <strong>Telephone: </strong><%= pair[1].display_phone %>
-          <br>
-          <strong>Location: </strong><%  pair[1].location.map do |loc| %>
-            <%= loc  %>
-            <br>
-          <%end %>
+
           <br>
           <strong>Categories : </strong><% pair[1].categories.map do |cat| %>
-            <%= cat[0]  %>
-            <br>
+            <%= cat[0] + ". " %>
           <%end %>
           </td>
 
