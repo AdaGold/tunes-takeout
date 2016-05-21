@@ -85,9 +85,12 @@ tr {
 
 .yelpheaderti{
   margin-top: 0;
-
 }
 
 .yelprates {
   overflow: auto;
+}
+
+table a {
+  color: rgb(130, 16, 30);
 }
