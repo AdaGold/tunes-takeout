@@ -19,7 +19,9 @@
  }*/
 
 body {
-  background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-1-full.jpg);
+  /*background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-1-full.jpg);*/
+  background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-11-full.jpg);
+  background-image: url(http://static1.squarespace.com/static/54e5fa76e4b0453ef23d0e1c/t/55256769e4b007c5fd384a2e/1428514738661/website-background-image3_BRIGHTER.jpg?format=1200w);
   height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -50,7 +52,6 @@ body {
 
 .foodmusic {
   width: 42%;
-  color: white;
 
 }
 
