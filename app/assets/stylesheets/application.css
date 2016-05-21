@@ -66,7 +66,7 @@ tr {
 }
 
 .spotifytitle {
-  border: solid yellow;
+  /*border: solid yellow;*/
   float: right;
   width: 54%;
 }
@@ -76,7 +76,7 @@ tr {
 }
 
 .yelpheader {
-  border: solid blue;
+  /*border: solid blue;*/
   overflow: auto;
 
 }
@@ -86,7 +86,7 @@ tr {
 }
 
 .yelprates {
-  border: solid orange;
+  /border: solid orange;
   overflow: auto;
 }
 
