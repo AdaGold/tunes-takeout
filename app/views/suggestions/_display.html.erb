@@ -12,7 +12,7 @@
           <iframe src="https://embed.spotify.com/?uri=<%= pair[0].uri %>&theme=white" frameborder="0" allowtransparency="true"></iframe>
           </td>
 
-
+          <%if current_user%>
           <td class="fava">
           <%= form_tag add_favorite_path, method: :post do %>
           <%=hidden_field_tag :current_user_id, current_user.uid%>
@@ -20,6 +20,7 @@
           <%=submit_tag 'Favorite!', class: "btn btn-primary"%>
           <%end%>
           </td>
+          <%end%>
 
 
           <td class="foodmusic">

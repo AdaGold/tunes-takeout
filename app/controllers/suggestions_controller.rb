@@ -3,6 +3,7 @@ require "#{Rails.root}/app/models/music.rb"
 require 'rspotify'
 
 class SuggestionsController < ApplicationController
+before_action :require_login, only: [:favorites, :favorite, :unfavorites]
   def index
 
     @top = Charles::TunesTakeoutWrapper.all_favorites
@@ -27,6 +28,7 @@ class SuggestionsController < ApplicationController
 
 
   def favorites
+
     @my_favorites = Charles::TunesTakeoutWrapper.get_my_favorite(current_user.uid)
 
     if @my_favorites.suggestions.nil?
@@ -48,9 +50,8 @@ class SuggestionsController < ApplicationController
 
   def favorite
     @result = Charles::TunesTakeoutWrapper.add_favorite(params[:current_user_id], params[:suggestion_id])
-    redirect_to root_path
+    redirect_to my_favorites_path
   end
-
 
   def unfavorite
   end
