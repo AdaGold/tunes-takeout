@@ -1,6 +1,6 @@
 
 class Food
-  attr_reader :the_image_url, :rating, :name, :review_count, :rating_img_url_large, :categories, :location
+  attr_reader :the_image_url, :rating, :name, :review_count, :rating_img_url_large, :categories, :location, :display_phone, :open_yelp_url
   def initialize(data)
     @the_image_url = data.business.image_url
     @name = data.business.name
@@ -9,6 +9,8 @@ class Food
     @rating_img_url_large = data.business.rating_img_url_large
     @categories = data.business.categories
     @location = data.business.location.display_address
+    @display_phone =  data.business.display_phone
+    @open_yelp_url = data.business.url
   end
 
   def self.find_in_api(id)
