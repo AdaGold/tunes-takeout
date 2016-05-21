@@ -36,7 +36,7 @@
         <ul class="nav navbar-nav">
          <li><%=link_to "20 Top in the World", root_path %>
            <%if current_user%>
-         <li><%= form_tag search_result_path, class: "navbar-form navbar-left" do  %>
+           <li><%= form_tag search_result_path, class: "navbar-form navbar-left" do  %>
             <div class="form-group">
               <%= text_field_tag :user_input, nil, class: 'form-control' %>
             </div>
@@ -46,7 +46,7 @@
 
          <li><%=link_to "My Favorites", my_favorites_path %></li>
          <li><%=link_to "Log Out", logout_path, method: :delete, class: "totheleft" %> </li>
-         <li><%=current_user.uid%></li>
+         <li><%=link_to current_user.uid, current_user.open_spotify_url%></li>
          <%=image_tag current_user.images, class: "picprofile" %>
          <%end%>
 
@@ -56,17 +56,17 @@
         </ul>
       </div>
     </div><!-- /.container-fluid -->
-</nav>
+  </nav>
 
-<% if flash[:notice] -%>
-<div class="alert alert-warning" role="alert">
-  <p class='notice'><%=h flash[:notice] %></p>
-</div>
-<% end %>
+  <% if flash[:notice] -%>
+  <div class="alert alert-warning" role="alert">
+    <p class='notice'><%=h flash[:notice] %></p>
+  </div>
+  <% end %>
 
-<div class="container">
-<%= yield %>
-</div>
+  <div class="container">
+  <%= yield %>
+  </div>
 
 </body>
 </html>
