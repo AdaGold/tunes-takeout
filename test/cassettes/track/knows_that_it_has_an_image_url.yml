@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/tracks/0FC7X3BRdEJC8L4ZEUAv2Q
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 22 May 2016 07:24:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=7200
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000;
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKRU21LbMBB971d49EyxZNmynTdgKAyFTrmkpe10MmtLjjX4
+        VtkOpAz/XkcWpgGcpu1LZry7OXt2z1ndv7EsBFnU5siaWPfd1+P3rFlWYhVE
+        tSzmmUA7JrkAmUGUiVkO6kY09armm4UO9tCOhc6uV7/TS2R9N/XirhGqgGzW
+        qqx+atJl6qpsZLLUPdKmqeqJbZeVKHZNYjcuc1tzsV32Q5UXV8tPy+NMXXHy
+        87Q+PlJIIz2YRqkSyRoWVHINakF6tHoMzgBJrmH+UJTDXJjZh4lSIedpswoy
+        F+88RrvB13h1rGJedJRsDWI7OHG5H0Q+x46HIw5u5FCH+SEFzgh4PgYnDhyM
+        BsRbyZvUtDE7eI0ExduT4KHnBiF3IMRemGCHJpR5BEjUtQBBOGdxANQVr5Do
+        2mwgwdytOQQuDmkCXhDExKFxgkNOQxz5BES3IBEw18Exi15fRE9hsF0Bee/e
+        /VIV1lUqa+szLB/VG7zdW99EWyV7w/emmejkZNx72nkIVCPrZs0K/216DWmT
+        4y/OCccf8o8t5JfpnmLvz/L6H1zfMxzDW7f95qJhrafAl9YRzOHlSnW30Z3q
+        7GR8NCPh370ziMs6nhVtHgm1qiN9sFXQyLKY5frPDsMuYzoj7qpMxlIbNIGs
+        FiZqVJP8N9GQrFWsZ5heTs98QjBmNHjSf0Tr7ZRuFMQ3Nn534F/T/Qt+eHIQ
+        nLpfD6d7C+f8qcU2ImukegxKwxiFN5VsOBtUlVWbgZKNnsntd1wpsZDidvb8
+        tqvhtvOKvjVVdgRxSH3qCe5gcKmf4O5ZoVFAfBKL7siZl3RPHfQXjvRIL1Qd
+        jKbTfeVzl+nUZGytD78AAAD//wMAHp4iD/YGAAA=
+    http_version: 
+  recorded_at: Sun, 22 May 2016 07:24:56 GMT
+recorded_with: VCR 3.0.1

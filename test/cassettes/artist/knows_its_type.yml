@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/artists/1jn4AT2jGKmlUVZWmuzNP4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 22 May 2016 07:13:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=7200
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000;
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAHyQSwvCMBCE7/6K0LNYKj315smDICI+QBEJNdXo5kGyUWvp
+        f7dNquhBj/vtzOywVY+QiN2RGUlh7wzYiGSkamjDrVbIi7Il0QlR2yyOlWZy
+        0C0GuRIxNcgtxslZpqPF8DyeCFiuNmvhHtNZGjVBdb+9USgAdWPmM/9kWNGO
+        0gH0A0KFFFqWvp1HJg3zti3ZefLyvUtRzb86XZOulv3Vy+fwg0/5KxH0+H1c
+        UsG8bc7zS0kWNFdBqpV2QA1H/7DEMyx1EIc6QegM96xrnIVd9uuD9RMAAP//
+        AwBmqBvMpAEAAA==
+    http_version: 
+  recorded_at: Sun, 22 May 2016 07:13:11 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/artists/1jn4AT2jGKmlUVZWmuzNP4/albums?limit=20&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 22 May 2016 07:13:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=7200
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000;
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAIxU207bQBB95ysiP/AU4Ut8SyRUQQJJShIiQkJLVUUb75gs
+        9U32Oi1F/HvXx4YqUmh5OdqdmT3n7Oxon49aLW2bU6i1emohZVb0dJ1l4qTI
+        UinCp5MgjfWdqbNcikIWuvmY2Ge31uPwKo6Wq/u7uPw9m9s6izZlXHxKw7Ag
+        eWocRyIW8tQyjpFYy6eMTguRPETURqStaDMRMSnSpM2yjFherNWSMq1dWRKS
+        4qLy9K31rPYq8pcIVrFFbZXbMcW1iWgds/wHyeakdnajtRUugbcVnl8Ar4HI
+        ng8r7J8BJ0Bk+8j2vwLvKxxcAZEdgOeiD8R6sarwcgzE2WGN0B3NgGAYwc94
+        AcTZMWomYJjUa9RMoT5FZPqlwhkczuBnBq0Z/Mzhf476OTjnIyDq52BY4KYL
+        eLiA+gKVfVTe3gHheQmeJWqG5+jeAK6gOMWtxwOt9b3pP/2SlCcsWpd5hN7X
+        b6YyzRTtTVeaUbI3XnhL3Znwkk9W19utH48/r25iyzaXlxqYXhqhD00qRvE9
+        uoZIcND8pyhmD7Q3hZUFEg9bWQVd22i/RtXF93wpVwFPlCUdJPrGtAOfsZDZ
+        ru+6Hc8nTjzkXXJ8ChyLPHICCv2u9sb4U3C5bWSaHhwy0TE+bsLwHdO2A6Pj
+        uaa3cSzHUOqG5zkmkcM6XZMHrmsy64AJJfMPE679YQ+mv7GVstMJlLJL9sbm
+        vud3beLctDizlTXmccM52IjawtvYJSyuP4ORMkJ5a0I7il4f7/BPUeYCwWZm
+        ekj23h+9RkzDf1adtNBuLVEjX22TMooQqH++KlQXZDntRFoWe0UylQztMY9e
+        /gAAAP//AwDCP13JegUAAA==
+    http_version: 
+  recorded_at: Sun, 22 May 2016 07:13:11 GMT
+recorded_with: VCR 3.0.1
