@@ -12,7 +12,7 @@ class SessionsControllerTest < ActionController::TestCase
   end
 
   test "should get destroy" do
-    get :destroy
+    delete :destroy
     assert_response :redirect
   end
 
