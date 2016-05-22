@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   post '/suggestions/favorite' => 'suggestions#favorite', as: :add_favorite
   get '/suggestions/myfavs' => 'suggestions#favorites', as: :my_favorites
 
-  #
-  # get 'suggestions/unfavorite'
+
+  delete 'suggestions/unfavorite' => 'suggestions#unfavorite', as: :unfavorite
 
   resources :sessions, :only => [:create]
 
