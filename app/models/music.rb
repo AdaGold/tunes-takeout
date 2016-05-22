@@ -22,11 +22,8 @@ class Music
         music_result = RSpotify::Artist.find(id)
       elsif type == "album"
         music_result = RSpotify::Album.find(id)
-      elsif type == "playlist"
-        music_result = RSpotify::Artist.find("1Xb0GGagoN5fWgMYOzlnzc")
       else
         music_result = RSpotify::Track.find(id)
-
       end
     return self.new(music_result)
   end
