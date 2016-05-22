@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v2/business/seattle-yoga-lounge-seattle
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - OAuth oauth_consumer_key="_R_trNFDzsAcX3LXtO1Kzw", oauth_nonce="5d5e8ef7975136280db71c4e7a289873",
+        oauth_signature="fgcHi4CbF3UFdPMiFSPOlBq8fGk%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1463930720", oauth_token="g6Y2ohxxC7p1bt58iY_a7i8ojXlKZaVd",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 22 May 2016 15:25:20 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d1924b900d36ca4e9c6627fa37cee8eac1463930720; expires=Mon, 22-May-17
+        15:25:20 GMT; path=/; domain=.yelp.com; HttpOnly
+      - bse=a21166787e7454a331eaa83258eb39c2; Domain=.yelp.com; Path=/; HttpOnly
+      - yuv=BHtCn8l__poE5XuySqFIg2G9QNAbn-e388V_R-qIgT2NDE9VEHz6JW-tCPjwp26hrKp2AUqIfiNqkTjSnTAv-rHTSGgtHs3C;
+        Domain=.yelp.com; Max-Age=630720000; Path=/; expires=Sat, 17-May-2036 15:25:20
+        GMT
+      X-Node:
+      - 10-64-147-20-uswest1bprod
+      - api_com
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store, private
+      Expires:
+      - Sun, 22 May 2016 15:25:20 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - Accept-Encoding,User-Agent
+      X-Mode:
+      - ro
+      X-Proxied:
+      - 10-64-0-189-uswest1aprod
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2a7147bb15da0c47-SEA
+    body:
+      encoding: ASCII-8BIT
+      string: '{"is_claimed": true, "rating": 3.5, "mobile_url": "http://m.yelp.com/biz/seattle-yoga-lounge-seattle?utm_campaign=yelp_api\u0026utm_medium=api_v2_business\u0026utm_source=_R_trNFDzsAcX3LXtO1Kzw",
+        "rating_img_url": "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png",
+        "review_count": 92, "name": "Seattle Yoga Lounge", "rating_img_url_small":
+        "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png",
+        "url": "http://www.yelp.com/biz/seattle-yoga-lounge-seattle?utm_campaign=yelp_api\u0026utm_medium=api_v2_business\u0026utm_source=_R_trNFDzsAcX3LXtO1Kzw",
+        "categories": [["Yoga", "yoga"]], "reviews": [{"rating": 4, "excerpt": "Such
+        a great studio! Elvis and his team are so welcoming and wonderful. I have
+        taken several classes here via Class Pass and have thoroughly enjoyed them...",
+        "time_created": 1459828326, "rating_image_url": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+        "rating_image_small_url": "https://s3-media4.fl.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+        "user": {"image_url": "http://s3-media3.fl.yelpcdn.com/photo/HJBuXQsDvOwKywgZgsdCKQ/ms.jpg",
+        "id": "E3R2xduRKT1aaA6OZq9hSg", "name": "Jen T."}, "rating_image_large_url":
+        "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/ccf2b76faa2c/ico/stars/v1/stars_large_4.png",
+        "id": "AUIhjm4OQAoshRwsJI_fRg"}], "phone": "2065234569", "snippet_text": "Such
+        a great studio! Elvis and his team are so welcoming and wonderful. I have
+        taken several classes here via Class Pass and have thoroughly enjoyed them...",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/dSbX4D2yBBYq4L7Y7g0yqQ/ms.jpg",
+        "snippet_image_url": "http://s3-media3.fl.yelpcdn.com/photo/HJBuXQsDvOwKywgZgsdCKQ/ms.jpg",
+        "display_phone": "+1-206-523-4569", "rating_img_url_large": "https://s3-media3.fl.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/v1/stars_large_3_half.png",
+        "id": "seattle-yoga-lounge-seattle", "is_closed": false, "location": {"city":
+        "Seattle", "display_address": ["6900 E Greenlake Way", "Ste L", "Greenlake",
+        "Seattle, WA 98115"], "geo_accuracy": 9.5, "neighborhoods": ["Greenlake"],
+        "postal_code": "98115", "country_code": "US", "address": ["6900 E Greenlake
+        Way", "Ste L"], "coordinate": {"latitude": 47.678218, "longitude": -122.326477},
+        "state_code": "WA"}}'
+    http_version: 
+  recorded_at: Sun, 22 May 2016 15:25:20 GMT
+recorded_with: VCR 3.0.1
