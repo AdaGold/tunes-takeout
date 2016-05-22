@@ -37,5 +37,8 @@ module Charles
 
     end
 
+    def self.delete_favorite(current_user_id,suggestion_id)
+      HTTParty.delete(BASE_URL + "/v1/users/#{current_user_id}/favorites", body: { "suggestion": suggestion_id}.to_json, headers: { 'Content-Type' => 'application/json' })
+    end
   end
 end

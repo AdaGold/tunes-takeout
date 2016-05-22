@@ -40,6 +40,8 @@ before_action :require_login, only: [:favorites, :favorite, :unfavorites, :searc
   end
 
   def unfavorite
+    @result = Charles::TunesTakeoutWrapper.delete_favorite(params[:current_user_id], params[:suggestion_id])
+    redirect_to my_favorites_path
   end
 
   def search_result
