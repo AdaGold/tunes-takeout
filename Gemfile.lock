@@ -244,7 +244,7 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
-  webmock
+  webmock (= 2.0.2)
   yelp (~> 2.1, >= 2.1.2)
 
 RUBY VERSION
