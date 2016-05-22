@@ -7,7 +7,7 @@ class SuggestionsControllerTest < ActionController::TestCase
   end
 
   test "should get favorite" do
-    get :favorite
+    post :favorite
     assert_response :success
   end
 
@@ -17,8 +17,8 @@ class SuggestionsControllerTest < ActionController::TestCase
   end
 
   test "should get unfavorite" do
-    get :unfavorite
-    assert_response :success
+    delete :unfavorite
+    assert_response :redirect
   end
 
 end
