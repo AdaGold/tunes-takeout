@@ -26,6 +26,13 @@
           <%=hidden_field_tag :suggestion_id, pair[2]%>
           <%=submit_tag 'Favorite!', class: "btn btn-primary"%>
           <%end%>
+          <br>
+
+          <%= form_tag unfavorite_path, method: :delete do %>
+          <%=hidden_field_tag :current_user_id, current_user.uid%>
+          <%=hidden_field_tag :suggestion_id, pair[2]%>
+          <%=submit_tag 'Unfavorite!', class: "btn btn-primary"%>
+          <%end%>
           </td>
           <%end%>
 
