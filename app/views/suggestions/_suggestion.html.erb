@@ -17,7 +17,7 @@
 
           <br>
           <iframe src="https://embed.spotify.com/?uri=<%= pair[0].uri %>&theme=white" frameborder="0" allowtransparency="true"></iframe>
-          <%= button_to "Open in Spotify", pair[0].open_spotify_url, method: :get, class: "btn btn-primary"  %>
+          <%= button_to "Open in Spotify", pair[0].open_spotify_url, method: :get, class: "btn btn-success"  %>
 
           </td>
 
@@ -72,11 +72,11 @@
           <strong>Categories : </strong><% pair[1].categories.map do |cat| %>
             <%= cat[0] + ". " %>
           <%end %>
-          <%= button_to "Open in Yelp", pair[1].open_yelp_url, method: :get, class: "btn btn-primary"  %>
+          <%= button_to "Open in Yelp", pair[1].open_yelp_url, method: :get, class: "btn btn-danger"  %>
           </td>
 
         </tr>
       </table>
 
-<%end%>
+  <%end%>
 <%end%>

@@ -7,5 +7,7 @@
 one: {}
 # column: value
 #
-two: {}
-#  column: value
+known_user:
+ uid: americandreamers
+ provider: spotify
+ # open_spotify_url: https://open.spotify.com/user/americandreamers

@@ -6,14 +6,14 @@ class SessionsControllerTest < ActionController::TestCase
   #   assert_response :success
   # end
 
-  test "should get create" do
-    get :create
-    assert_response :success
-  end
-
-  test "should get destroy" do
-    delete :destroy
-    assert_response :redirect
-  end
+  # test "should get create" do
+  #   get :create
+  #   assert_response :success
+  # end
+  #
+  # test "should get destroy" do
+  #   delete :destroy
+  #   assert_response :redirect
+  # end
 
 end
