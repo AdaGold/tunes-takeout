@@ -13,3 +13,84 @@
  *= require_tree .
  *= require_self
  */
+/*
+ html {
+   background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-5-full.jpg);
+ }*/
+
+body {
+  /*background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-1-full.jpg);*/
+  background-image: url(https://cdn.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-11-full.jpg);
+  background-image: url(http://static1.squarespace.com/static/54e5fa76e4b0453ef23d0e1c/t/55256769e4b007c5fd384a2e/1428514738661/website-background-image3_BRIGHTER.jpg?format=1200w);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.yelp_pic {
+  float: right;
+
+}
+
+.picprofile {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.totheleft {
+  float: right;
+}
+
+.spotifypic {
+  height: 100px;
+  width: 100px;
+
+}
+
+.table>tbody>tr>.food {
+  width: 42%;
+  padding-top: 4%;
+  padding-right: 7%;
+}
+
+.table>tbody>tr>.music {
+  width: 42%;
+  padding-top: 4%;
+  padding-left: 7%;
+}
+
+.fava {
+  width: 16%;
+}
+
+tr {
+  margin-bottom: 40px;
+  background-color: rgba(250, 250, 250, 0.7);
+}
+
+.spotifytitle {
+  float: right;
+  width: 54%;
+  text-align: right;
+}
+
+.ratingpic {
+  float: right;
+}
+
+.yelpheader {
+  overflow: auto;
+}
+
+.yelpheaderti{
+  margin-top: 0;
+}
+
+.yelprates {
+  overflow: auto;
+}
+
+table a {
+  color: rgb(130, 16, 30);
+}

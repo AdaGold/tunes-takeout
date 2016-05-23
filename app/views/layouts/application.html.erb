@@ -5,10 +5,71 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<%= favicon_link_tag 'favicon.ico' %>
+<link rel="icon" type="image/gif" href="assets/images/animated_favicon1.gif">
 </head>
 <body>
 
-<%= yield %>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%=link_to "Melissa", root_path, class: 'navbar-brand'%>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><%=link_to "20 Top in the World", root_path %>
+          <%if current_user%>
+            <li><%= form_tag search_result_path, class: "navbar-form navbar-left" do  %>
+              <div class="form-group">
+                <%= text_field_tag :user_input, nil, class: 'form-control' %>
+              </div>
+              <%= submit_tag "Search", class: 'btn btn-default'%>
+              <% end %>
+            </li>
+            <li><%=link_to "My Favorites", my_favorites_path %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+            <li><%=link_to "Log Out", logout_path, method: :delete, class: "totheleft" %> </li>
+            <li><%=link_to current_user.open_spotify_url, target: :_blank do %>
+              <%=current_user.uid %></li>
+              <%=image_tag current_user.images, class: "picprofile" %>
+            <% end %>
+          <%end%>
+
+            <li><%=link_to "Login With Spotify", "/auth/spotify" unless current_user%>   </li>
+
+          </div>
+        </ul>
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <% if flash[:notice] -%>
+  <div class="alert alert-warning" role="alert">
+    <p class='notice'><%=h flash[:notice] %></p>
+  </div>
+  <% end %>
+
+  <div class="container">
+  <%= yield %>
+  </div>
 
 </body>
 </html>

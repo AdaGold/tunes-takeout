@@ -1,0 +1,82 @@
+<% if @zip %>
+<% @zip.map do |pair|%>
+      <table class="table">
+        <tr>
+          <td class="music">
+          <%= link_to pair[0].open_spotify_url, target: :_blank do %>
+          <%= image_tag pair[0].image, size: '100X100', alt: "Profile Photo", class: "spotifypic" %>
+          <div class='spotifytitle'>
+
+          <h3><%= pair[0].name %></h3>
+          <strong>Type : </strong><%= pair[0].type.capitalize %>
+          <% end %>
+          </div>
+          <br>
+
+          <br>
+
+          <br>
+          <iframe src="https://embed.spotify.com/?uri=<%= pair[0].uri %>&theme=white" frameborder="0" allowtransparency="true"></iframe>
+          <%= button_to "Open in Spotify", pair[0].open_spotify_url, method: :get, class: "btn btn-success"  %>
+
+          </td>
+
+          <%if current_user%>
+          <td class="fava">
+          <%= form_tag add_favorite_path, method: :post do %>
+          <%=hidden_field_tag :current_user_id, current_user.uid%>
+          <%=hidden_field_tag :suggestion_id, pair[2]%>
+          <%=submit_tag 'Favorite!', class: "btn btn-primary"%>
+          <%end%>
+          <br>
+
+          <%= form_tag unfavorite_path, method: :delete do %>
+          <%=hidden_field_tag :current_user_id, current_user.uid%>
+          <%=hidden_field_tag :suggestion_id, pair[2]%>
+          <%=submit_tag 'Unfavorite!', class: "btn btn-primary"%>
+          <%end%>
+          </td>
+          <%end%>
+
+
+          <td class="food">
+            <div class="yelpheader">
+              <%= link_to pair[1].open_yelp_url, target: :_blank do %>
+              <%= image_tag pair[1].the_image_url, alt: pair[1].the_image_url, class: "yelp_pic" %>
+              <h3 class="yelpheaderti"><%= pair[1].name %></h3>
+              <% end %>
+              <% unless  pair[1].display_phone.nil? %>
+              <%= link_to "tel:#{pair[1].display_phone}" do%>
+              <span class="glyphicon glyphicon-phone-alt">&nbsp;</span>  <%= pair[1].display_phone[3..-1]  %>
+              <% end %>
+
+              <% end %>
+              <br>
+              <br>
+
+              <%  pair[1].location.map do |loc| %>
+                <%= loc %>
+                <br>
+              <%end %>
+
+            </div>
+          <br>
+          <div class="yelprates">
+            <strong>Rating : </strong><%=  pair[1].rating%>
+            <%= image_tag pair[1].rating_img_url_large, alt: pair[1].rating_img_url_large, class: "ratingpic" %>
+            <br>
+            <strong>Total Reviews: </strong><%=  pair[1].review_count%>
+          </div>
+
+          <br>
+          <strong>Categories : </strong><% pair[1].categories.map do |cat| %>
+            <%= cat[0] + ". " %>
+          <%end %>
+          <%= button_to "Open in Yelp", pair[1].open_yelp_url, method: :get, class: "btn btn-danger"  %>
+          </td>
+
+        </tr>
+      </table>
+
+  <%end%>
+<%end%>
